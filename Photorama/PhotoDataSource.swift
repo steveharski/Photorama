@@ -22,5 +22,5 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
             as! PhotoCollectionViewCell
         return cell
     }
-    
+        
 }

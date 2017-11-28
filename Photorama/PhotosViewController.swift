@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController, UICollectionViewDelegate {
+class PhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -56,6 +56,22 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    /*
+    // Chapter 21: Silver Challenge ---
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.bounds.size).width / 5, height: 90.0)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        // collectionView.reloadData()
+        
+        super.viewWillTransition(to: size, with: coordinator)
+        // Invalidates current layout and triggers layout update
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    // Chapter 21: Silver Challenge ---
+    */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showPhoto"?:
@@ -70,10 +86,5 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             preconditionFailure("Unexpected segue identifier.")
         }
     }
-    
-    
-    
-    
-    
     
 }
