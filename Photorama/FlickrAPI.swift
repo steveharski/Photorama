@@ -75,6 +75,12 @@ struct FlickrAPI {
                          parameters: ["extras": "url_h,date_taken"])
     }
     
+    
+    static var recentPhotosURL: URL {
+        return flickrURL(method: .recentPhotos, parameters: ["extras": "url_h,date_taken"])
+    }
+ 
+    
     static func photos(fromJSON data: Data) -> PhotosResult {
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
