@@ -12,7 +12,7 @@ class PhotoInfoViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
-    @IBOutlet weak var imageViewCounter: UITextField!
+   // @IBOutlet weak var imageViewCounter: UITextField!
     
     var photo: Photo! {
         didSet {
@@ -30,14 +30,37 @@ class PhotoInfoViewController: UIViewController {
             case let .success(image):
                 self.imageView.image = image
                 // Core Data: Silver Challenge
+                /*
                 self.photo.photoViewCounter += 1
                 let counter = self.photo.photoViewCounter
                 self.imageViewCounter.text = counter > 1 ? "👓 \(counter) times" : "👓 \(counter) time"
+                 */
                 // Core Data: Silver Challenge
             case let .failure(error):
                 print("Error fetching image for photo: \(error)")
             }
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showTags"?:
+            let navController = segue.destination as! UINavigationController
+            let tagController = navController.topViewController as! TagsViewController
+            
+            tagController.store = store
+            tagController.photo = photo
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     
 }
