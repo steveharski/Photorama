@@ -89,11 +89,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-ge-Cy4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkK-5u-tjm">
+                                <rect key="frame" x="0.0" y="650" width="370" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oCu-ge-Cy4" firstAttribute="top" secondItem="mBc-ZA-VVU" secondAttribute="top" id="66Z-HN-OVI"/>
+                            <constraint firstItem="mBc-ZA-VVU" firstAttribute="trailing" secondItem="PkK-5u-tjm" secondAttribute="trailing" constant="5" id="BFX-MU-fuH"/>
                             <constraint firstItem="oCu-ge-Cy4" firstAttribute="leading" secondItem="mBc-ZA-VVU" secondAttribute="leading" id="EOJ-PR-wcm"/>
+                            <constraint firstItem="PkK-5u-tjm" firstAttribute="bottom" secondItem="mBc-ZA-VVU" secondAttribute="bottom" id="MqK-rW-lsZ"/>
+                            <constraint firstItem="PkK-5u-tjm" firstAttribute="leading" secondItem="mBc-ZA-VVU" secondAttribute="leading" id="U6e-r3-G8y"/>
                             <constraint firstItem="mBc-ZA-VVU" firstAttribute="bottom" secondItem="oCu-ge-Cy4" secondAttribute="bottom" id="lHS-RG-wpi"/>
                             <constraint firstItem="mBc-ZA-VVU" firstAttribute="trailing" secondItem="oCu-ge-Cy4" secondAttribute="trailing" id="nLS-OA-dHs"/>
                         </constraints>
@@ -101,6 +110,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="oCu-ge-Cy4" id="qB8-DY-jA5"/>
+                        <outlet property="imageViewCounter" destination="PkK-5u-tjm" id="gR2-iK-RFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y88-BN-zQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
